@@ -8,3 +8,6 @@ except PackageNotFoundError:  # pragma: no cover
     __version__ = "unknown"
 finally:
     del version, PackageNotFoundError
+
+# Makes the content of the quantitative characteristics available under this namespace
+from opensemantic.characteristic.quantitative import *

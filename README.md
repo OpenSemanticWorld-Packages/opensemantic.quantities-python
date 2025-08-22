@@ -21,6 +21,10 @@ A longer description of your project goes here...
 
 <!-- pyscaffold-notes -->
 
+# Important!
+In Python the quantities are defined as characteristics in the opensemantic.characterisitc.quantitative package. 
+Therefore, this package is empty and only contains a reference instead of recreating (duplicate) quantities
+
 ## Note
 
 This project has been set up using PyScaffold 4.6. For details and usage
