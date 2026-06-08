@@ -1,4 +1,4 @@
-from importlib_metadata import PackageNotFoundError, version  # pragma: no cover
+from importlib.metadata import PackageNotFoundError, version  # pragma: no cover
 
 try:
     # Change here if project is renamed and does not equal the package name
@@ -10,4 +10,4 @@ finally:
     del version, PackageNotFoundError
 
 # Makes the content of the quantitative characteristics available under this namespace
-from opensemantic.characteristic.quantitative import *
+from opensemantic.quantities._model import *  # noqa

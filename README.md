@@ -1,29 +1,45 @@
-<!-- These are examples of badges you might want to add to your README:
-     please update the URLs accordingly
-
-[![Built Status](https://api.cirrus-ci.com/github/<USER>/opensemantic.quantities.svg?branch=main)](https://cirrus-ci.com/github/<USER>/opensemantic.quantities)
-[![ReadTheDocs](https://readthedocs.org/projects/opensemantic.quantities/badge/?version=latest)](https://opensemantic.quantities.readthedocs.io/en/stable/)
-[![Coveralls](https://img.shields.io/coveralls/github/<USER>/opensemantic.quantities/main.svg)](https://coveralls.io/r/<USER>/opensemantic.quantities)
 [![PyPI-Server](https://img.shields.io/pypi/v/opensemantic.quantities.svg)](https://pypi.org/project/opensemantic.quantities/)
-[![Conda-Forge](https://img.shields.io/conda/vn/conda-forge/opensemantic.quantities.svg)](https://anaconda.org/conda-forge/opensemantic.quantities)
-[![Monthly Downloads](https://pepy.tech/badge/opensemantic.quantities/month)](https://pepy.tech/project/opensemantic.quantities)
-[![Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Twitter)](https://twitter.com/opensemantic.quantities)
--->
-
 [![Project generated with PyScaffold](https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold)](https://pyscaffold.org/)
 
 # opensemantic.quantities
 
-> Library with Python models derived from the page package world.opensemantic.quantities.
+> Pydantic models for physical quantities, units and prefixes from [world.opensemantic.quantities](https://github.com/OpenSemanticWorld-Packages/world.opensemantic.quantities).
 
-A longer description of your project goes here...
+Provides typed Python classes for working with units of measure, unit prefixes, composed units, and quantity kinds based on the [QUDT](https://qudt.org/) ontology. Includes SI, CGS, and commonly used non-SI units (bar, atm, calorie, etc.).
 
+## Installation
 
-<!-- pyscaffold-notes -->
+```bash
+pip install opensemantic.quantities
+```
 
-# Important!
-In Python the quantities are defined as characteristics in the opensemantic.characterisitc.quantitative package. 
-Therefore, this package is empty and only contains a reference instead of recreating (duplicate) quantities
+## Usage
+
+```python
+from opensemantic.quantities import QuantityUnit, ComposedUnit, UnitPrefix, QuantityKind
+
+# Pydantic v1 models
+from opensemantic.quantities.v1 import QuantityUnit as QuantityUnitV1
+```
+
+## Models
+
+| Class | Description |
+|---|---|
+| `UnitPrefix` | SI unit prefixes (kilo, milli, micro, etc.) |
+| `QuantityUnit` | Base units with prefix variants (metre, second, pascal, bar, etc.) |
+| `ComposedUnit` | Units composed of multiple factors (m/s, kg*m/s^2, etc.) |
+| `QuantityKind` | Physical quantities (Length, Mass, Pressure, etc.) |
+| `PrefixUnit` | Prefixed variant of a unit (subobject of QuantityUnit) |
+| `ComposedUnitElement` | Prefixed variant of a composed unit (subobject of ComposedUnit) |
+
+## Dependencies
+
+- `opensemantic.core` - base entity models (Entity, Item, Label, etc.)
+
+## Schema source
+
+Generated from [world.opensemantic.quantities](https://github.com/OpenSemanticWorld-Packages/world.opensemantic.quantities) using [osw-python-package-generator](https://github.com/OpenSemanticWorld-Packages/osw-python-package-generator) with manual fixes for known code generator issues (see [oold-python#84](https://github.com/OO-LD/oold-python/issues/84)).
 
 ## Note
 
